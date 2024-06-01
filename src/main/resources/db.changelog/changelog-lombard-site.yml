@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: db.changelog/changeset/create-admin.yml
+  - include:
+      file: db.changelog/changeset/create-auction-announcement.yml

@@ -1,0 +1,17 @@
+server:
+  port: 9071
+warehouse-url: ${WAREHOUSE_URL:http://localhost:9070/lombard/warehouse/}
+spring:
+  datasource:
+    username: admin
+    password: psw
+    url: jdbc:postgresql://localhost:8433/site-warehouse
+    driverClassName: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgresPlusDialect
+        ddl-auto: validate
+        format_sql: true
+  liquibase:
+    change-log: classpath:./db.changelog/changelog-lombard-site.yml

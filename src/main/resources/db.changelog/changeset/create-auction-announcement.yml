@@ -1,0 +1,48 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_auction_announcement_table
+      author: aleksandrPob
+      changes:
+        - createTable:
+            tableName: AUCTION_ANNOUNCEMENT
+            columns:
+              - column:
+                  name: ID
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: PK_AUCTION_ANNOUNCEMENT
+              - column:
+                  name: CREATION_DATE
+                  type: VARCHAR(100)
+                  constraints:
+                    unique: false
+                    nullable: false
+              - column:
+                  name: DESCRIPTION
+                  type: VARCHAR(100)
+                  constraints:
+                    unique: false
+                    nullable: false
+              - column:
+                  name: PRODUCT_ID
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+                    unique: false
+              - column:
+                  name: PRODUCT_TYPE
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: true
+                    unique: false
+              - column:
+                  name: ADMIN_ID
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+                    unique: false
+                    foreignKeyName: FK_ADMIN_ID
+                    references: ADMIN(ID)
