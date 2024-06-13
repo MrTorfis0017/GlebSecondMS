@@ -19,5 +19,4 @@ public class AuctionAnnouncementService {
         AuctionAnnouncement auctionAnnouncement = auctionAnnouncementRepository.save(auctionConverter.fromDto(auctionAnnouncementDto));
         return auctionConverter.toDto(auctionAnnouncement);
     }
-
 }

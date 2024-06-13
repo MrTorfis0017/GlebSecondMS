@@ -16,7 +16,7 @@ public class RegistrationController {
     private final RegistrationService registrationService;
 
     @PostMapping("/admin")
-    public AdminDto registerSalesman(@RequestBody AdminDto adminDto) {
+    public AdminDto registerAdmin(@RequestBody AdminDto adminDto) {
         return registrationService.registerAdmin(adminDto);
     }
 }
